@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongo-dev:
+    extends:
+      file: docker-compose-base.yml
+      service: mongo
+
+  mongodb-compass-dev:
+    extends:
+      file: docker-compose-base.yml
+      service: mongodb-compass
+
+  streamlit-dev:
+    extends:
+      file: docker-compose-base.yml
+      service: streamlit
+
+  utils-dev:
+    image: python:3.9
+    container_name: 'utils_dev'
+    command: ["tail", "-f", "/dev/null"]
+    volumes:
+      - ./pipeline:/pipeline
+      - ./utils:/utils
+    networks:
+      - ml-network
+
+networks:
+  ml-network:

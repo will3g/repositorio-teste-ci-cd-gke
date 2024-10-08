@@ -1,0 +1,6 @@
+streamlit
+pandas
+scikit-learn
+joblib
+pymongo==4.8.0
+scikit-surprise==1.1.4
