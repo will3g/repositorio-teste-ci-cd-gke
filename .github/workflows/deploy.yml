@@ -46,6 +46,7 @@ jobs:
 
     - name: Generate Manifest to streamlit application
       run: |
+        chmod +x ./generate-manifest.sh
         ./generate-manifest.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.STREAMLIT_IMAGE }} streamlit 8080 streamlit-deployment.yml
 
     - name: Deploy to GKE
