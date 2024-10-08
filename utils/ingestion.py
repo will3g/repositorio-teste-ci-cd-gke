@@ -1,7 +1,6 @@
 import pandas as pd
 from pymongo import MongoClient
 
-# parte de ingestão de dados
 df_movies = pd.read_csv('../pipeline/movies.csv', 
     sep='\t', 
     encoding='latin-1', 
